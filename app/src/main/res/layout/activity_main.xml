@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:src="@drawable/filipinofeastlogo"
+            android:contentDescription="Filipino Feast Logo"
+            android:scaleType="fitCenter"/>
+
+        <!-- Countdown Timer -->
+        <TextView
+            android:id="@+id/countdownTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Countdown: Open in 30 minutes!"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Status Section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: "
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <ImageView
+                android:id="@+id/statusIndicator"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/greenbutton"/>
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open Now"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: "
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+            <ImageView
+                android:id="@+id/statusIndicatorClosed"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/redbutton"/>
+        </LinearLayout>
+
+        <!-- Special of the Day -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Special of the day!"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="15dp"/>
+
+        <ImageView
+            android:id="@+id/specialImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pancit"
+            android:contentDescription="Special of the Day Image"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/specialFoodText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pancit"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="5dp"/>
+
+        <!-- Menu Button -->
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Menu"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/black"/>
+
+        <!-- Hours & Location Button -->
+        <Button
+            android:id="@+id/hoursLocationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Hours and Location"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+</ScrollView>

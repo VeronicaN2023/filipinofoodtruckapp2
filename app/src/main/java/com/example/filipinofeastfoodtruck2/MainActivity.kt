@@ -1,47 +1,50 @@
 package com.example.filipinofeastfoodtruck2
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.filipinofeastfoodtruck2.ui.theme.FilipinoFeastFoodTruck2Theme
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import java.util.Calendar
 
-class MainActivity : ComponentActivity() {
+
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            FilipinoFeastFoodTruck2Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        // Status Elements
+        val statusText: TextView = findViewById(R.id.statusText)
+        val statusIndicator: ImageView = findViewById(R.id.statusIndicator)
+        val countdownText: TextView = findViewById(R.id.countdownTextView)
+
+        // Get current time (24-hour format)
+        val currentHour = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)
+
+        // Business hours logic (Example: Open from 10 AM - 8 PM)
+        if (currentHour in 10..20) {
+            statusText.text = "Open Now"
+            statusIndicator.setImageResource(R.drawable.greenbutton)
+            countdownText.text = "We are Open!"
+        } else {
+            statusText.text = "Closed"
+            statusIndicator.setImageResource(R.drawable.redbutton)
+            countdownText.text = "Opens at 10:00 AM"
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        // Buttons Navigation
+        val menuButton: Button = findViewById(R.id.menuButton)
+        val hoursLocationButton: Button = findViewById(R.id.hoursLocationButton)
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FilipinoFeastFoodTruck2Theme {
-        Greeting("Android")
+        menuButton.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
+
+        hoursLocationButton.setOnClickListener {
+            val intent = Intent(this, HoursLocationActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
