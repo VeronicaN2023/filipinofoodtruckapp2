@@ -1,127 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@android:color/white">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Logo -->
+
+    <!-- Countdown Text -->
+
+    <!-- Status Indicators -->
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="331dp"
+        android:layout_height="364dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/filipinofeastlogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/countdownTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp">
+        android:paddingTop="8dp"
+        android:text="Countdown: Open in 30 minutes!"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView" />
 
-        <!-- Logo -->
-        <ImageView
-            android:id="@+id/logoImageView"
-            android:layout_width="250dp"
-            android:layout_height="150dp"
-            android:src="@drawable/filipinofeastlogo"
-            android:contentDescription="Filipino Feast Logo"
-            android:scaleType="fitCenter"/>
+    <!-- Special of the Day -->
 
-        <!-- Countdown Timer -->
-        <TextView
-            android:id="@+id/countdownTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Countdown: Open in 30 minutes!"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="10dp"/>
+    <ImageView
+        android:id="@+id/statusIndicatorOpen"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/greenbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/countdownTextView" />
 
-        <!-- Status Section -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="10dp">
+    <TextView
+        android:id="@+id/statusTextOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Open Now"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/statusIndicatorOpen"
+        app:layout_constraintTop_toBottomOf="@id/countdownTextView" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status: "
-                android:textSize="16sp"
-                android:textColor="@android:color/black"/>
+    <ImageView
+        android:id="@+id/statusIndicatorClosed"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/redbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toEndOf="@id/statusTextOpen"
+        app:layout_constraintTop_toBottomOf="@id/countdownTextView" />
 
-            <ImageView
-                android:id="@+id/statusIndicator"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="5dp"
-                android:src="@drawable/greenbutton"/>
+    <TextView
+        android:id="@+id/statusTextClosed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Closed"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/statusIndicatorClosed"
+        app:layout_constraintTop_toBottomOf="@id/countdownTextView" />
 
-            <TextView
-                android:id="@+id/statusText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Open Now"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:layout_marginStart="5dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status: "
-                android:textSize="16sp"
-                android:textColor="@android:color/black"/>
-            <ImageView
-                android:id="@+id/statusIndicatorClosed"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="5dp"
-                android:src="@drawable/redbutton"/>
-        </LinearLayout>
+    <TextView
+        android:id="@+id/specialTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Special of the day!"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/statusIndicatorOpen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
 
-        <!-- Special of the Day -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Special of the day!"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="15dp"/>
+    <ImageView
+        android:id="@+id/specialImageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/pancit"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/specialTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-        <ImageView
-            android:id="@+id/specialImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/pancit"
-            android:contentDescription="Special of the Day Image"
-            android:scaleType="centerCrop"
-            android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/specialName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pancit"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/specialImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <TextView
-            android:id="@+id/specialFoodText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pancit"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="5dp"/>
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/menuButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="VIEW MENU"
+        app:layout_constraintTop_toBottomOf="@id/specialName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <!-- Menu Button -->
-        <Button
-            android:id="@+id/menuButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Menu"
-            android:layout_marginTop="15dp"
-            android:background="@android:color/darker_gray"
-            android:textColor="@android:color/black"/>
+    <Button
+        android:id="@+id/hoursLocationButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="VIEW HOURS AND LOCATION"
+        app:layout_constraintTop_toBottomOf="@id/menuButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-        <!-- Hours & Location Button -->
-        <Button
-            android:id="@+id/hoursLocationButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Hours and Location"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/darker_gray"
-            android:textColor="@android:color/black"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
-</ScrollView>

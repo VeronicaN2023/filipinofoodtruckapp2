@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Status Elements
-        val statusText: TextView = findViewById(R.id.statusText)
-        val statusIndicator: ImageView = findViewById(R.id.statusIndicator)
+        val statusText: TextView = findViewById(R.id.statusTextOpen)
+        val statusIndicator: ImageView = findViewById(R.id.statusIndicatorOpen)
         val countdownText: TextView = findViewById(R.id.countdownTextView)
 
         // Get current time (24-hour format)

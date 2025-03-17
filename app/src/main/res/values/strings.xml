@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">FilipinoFeastFoodTruck2</string>
+    <string name="cart_button_desc">Shopping cart button</string>
+    <string name="back_button_desc">Back button</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="decrease_qty">-</string>
+    <string name="increase_qty">+</string>
+    <string name="default_quantity">1</string>
+
+
 </resources>
