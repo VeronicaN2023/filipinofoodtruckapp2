@@ -1,10 +1,12 @@
 package com.example.filipinofeastfoodtruck2
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.ImageButton
+
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,15 @@ class MenuActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             finish()
         }
+
+        //Add to cart button
+        val cartButton: ImageButton = findViewById(R.id.cartButton)
+
+        cartButton.setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
 

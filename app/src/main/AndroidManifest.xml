@@ -24,8 +24,13 @@
             </intent-filter>
         </activity>
 
-        <!-- Menu Activity (Add this) -->
+        <!-- Menu Activity -->
         <activity android:name=".MenuActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+
+        <!-- Cart Activity (FIXED) -->
+        <activity android:name=".CartActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
 

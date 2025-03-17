@@ -1,6 +1,5 @@
 package com.example.filipinofeastfoodtruck2
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +7,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import android.widget.Toast
+
 
 class MenuAdapter(private val menuList: List<MenuItem>) :
     RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
@@ -20,8 +21,7 @@ class MenuAdapter(private val menuList: List<MenuItem>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.menu_item_layout, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.menu_item_layout, parent, false)
         return MenuViewHolder(view)
     }
 
@@ -30,6 +30,13 @@ class MenuAdapter(private val menuList: List<MenuItem>) :
         holder.menuItemImage.setImageResource(menuItem.imageResource)
         holder.menuItemName.text = menuItem.name
         holder.menuItemPrice.text = menuItem.price
+
+        // Handle Add to Cart Button Click
+        holder.addToCartButton.setOnClickListener {
+            CartManager.addToCart(menuItem)
+            Toast.makeText(holder.itemView.context, "${menuItem.name} added to cart!", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     override fun getItemCount(): Int {
