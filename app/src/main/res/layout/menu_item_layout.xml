@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="@drawable/background_gradient">
 
     <!-- Food Image -->
 
@@ -25,8 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Silog"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@id/menuItemImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -54,6 +56,7 @@
             android:text="@string/default_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             app:layout_constraintStart_toEndOf="@id/decreaseQty"
             app:layout_constraintEnd_toStartOf="@id/increaseQty"
             app:layout_constraintTop_toTopOf="@id/decreaseQty"
@@ -74,7 +77,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$9.95"
-        android:textSize="12sp"
+        android:textSize="20sp"
+        android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@id/quantitySelector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

@@ -11,12 +11,14 @@ object CartManager {
         return cartItems
     }
 
-    fun removeFromCart(item: MenuItem) {
-        cartItems.remove(item)
-    }
-
     fun clearCart() {
         cartItems.clear()
+    }
+
+    //Update cart items properly
+    fun updateCart(newCart: List<MenuItem>) {
+        cartItems.clear()
+        cartItems.addAll(newCart)
     }
 }
 
